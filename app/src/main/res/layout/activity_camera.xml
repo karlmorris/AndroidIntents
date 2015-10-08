@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.temple.androidintents.CameraActivity">
+
+    <SurfaceView
+        android:id="@+id/surface_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/camera_controls"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+        <LinearLayout
+            android:id="@+id/camera_controls_spacer"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/camera_flash_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/camera_flash_off" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/camera_controls_shutter"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/shutterImageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="center"
+                android:src="@drawable/shutter" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/camera_controls_sender"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/sendImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_send" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/pictureTakingInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#80000000"
+            android:textColor="#dddddd"
+            android:text="@string/layout_camera_swipe_to_switch"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

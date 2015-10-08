@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AndroidIntents</string>
+
+    <string name="title">Enter URL</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="layout_camera_swipe_to_switch">Swipe to switch cameras</string>
+    <string name="error_cannot_connect_to_camera">Cannot connect to camera.</string>
+    <string name="camera_intent_title">Temple Cam</string>
+
+</resources>
