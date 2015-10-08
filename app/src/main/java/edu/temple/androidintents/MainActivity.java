@@ -1,8 +1,11 @@
 package edu.temple.androidintents;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -15,6 +18,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //  Request permissions if SDK >= Marshmallow
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.CAMERA}, 1234);
+            }
+        }
 
         //  Create an intent to launch a browser activity
         findViewById(R.id.URLButton).setOnClickListener(new OnClickListener() {
@@ -45,5 +55,10 @@ public class MainActivity extends Activity {
                 startActivity(photoIntent);
             }
         });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] responses){
+
     }
 }
